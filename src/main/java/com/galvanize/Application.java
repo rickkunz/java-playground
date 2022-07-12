@@ -2,28 +2,24 @@ package com.galvanize;
 
 public class Application {
 
-    public static void main(String[] args) {
-//        System.out.println("Hello world!");
-
-//        int i = 45;
-//
-//        while (i <= 50) {
-//            System.out.println(i);
-//            i++;
-//        }
-
-//        for (int i = 2; i <= 6; i = i + 2) {
-//            System.out.println(i);
-//        }
-
-        if (args.length == 0) {
-            System.out.println("Please specify a name and email");
-            System.exit(1);
-        } else if (args.length == 1) {
-            System.out.println(String.format("Please specify an email for %s", args[0]));
-            System.exit(1);
+    public String fizzBuzz (int input) {
+        if (input % 5 == 0 && input % 3 == 0) {
+            return "FizzBuzz";
+        } else if (input % 3 == 0) {
+            return "Fizz";
+        } else if (input % 5 == 0) {
+            return "Buzz";
+        } else {
+            return String.valueOf(input);
         }
+    }
 
-        System.out.println(String.format("%1$s <%2$s>", args[0], args[1]));
+    public static void main(String[] args) {
+
+        Application obj = new Application();
+
+        String result = obj.fizzBuzz(Integer.parseInt(args[0]));
+
+        System.out.println(result);
     }
 }
